@@ -1,72 +1,67 @@
-# Church Fathers - Angular Web Application
+Características
 
-A comprehensive Angular application for exploring the writings and teachings of the Church Fathers, featuring authentication, content management, and an academic design.
+Características públicas
+- Página de inicio: Introducción a los Padres de la Iglesia con secciones "Qué, Por qué, Quién"
+- Navegación por categorías: Exploración jerárquica (Categorías → Tesis → Citas)
+- Diseño responsivo: Estilo académico con tipografía con serifas y una paleta de colores elegante
+- Citas interactivas: Notas expandibles con animaciones suaves
+- Búsqueda y filtro: Capacidad de filtrado en tiempo real
+- Página de contacto: Enlaces a redes sociales e información de contacto
 
-## Features
+Características de administración (requiere autenticación)
+- Operaciones CRUD completas: Gestiona categorías, tesis, citas, objeciones y notas
+- Autenticación con Firebase: Sistema seguro de inicio y cierre de sesión
+- Gestión de contenido: Panel administrativo completo para creación y edición
+- Validación de formularios: Validación integral con mensajes de error
+- Actualizaciones en tiempo real: Actualización automática del contenido en toda la aplicación
 
-### Public Features
-- **Home Page**: Introduction to Church Fathers with "What, Why, Who" sections
-- **Category Navigation**: Hierarchical browsing (Categories → Theses → Citations)
-- **Responsive Design**: Academic styling with serif typography and elegant color scheme
-- **Interactive Citations**: Expandable notes with smooth animations
-- **Search & Filter**: Real-time filtering capabilities
-- **Contact Page**: Social media links and contact information
+Características técnicas
+- Componentes independientes de Angular: Arquitectura moderna de Angular
+- Integración con Firebase: Autenticación y base de datos Firestore
+- Formularios reactivos: Manejo avanzado de formularios con validación
+- Protección de rutas: Rutas protegidas para usuarios autenticados
+- Carga perezosa: Optimización del rendimiento en la carga de páginas
+- Diseño responsivo: Enfoque mobile-first con integración de Bootstrap
+- TypeScript: Tipado fuerte en toda la aplicación
+- Pipes personalizados: Generación de slugs y otras funciones utilitarias
 
-### Admin Features (Authentication Required)
-- **Complete CRUD Operations**: Manage categories, theses, citations, objections, and notes
-- **Firebase Authentication**: Secure login/logout system
-- **Content Management**: Full administrative panel for content creation and editing
-- **Form Validation**: Comprehensive form validation with error messages
-- **Real-time Updates**: Automatic content updates across the application
+Estructura del proyecto
 
-### Technical Features
-- **Angular Standalone Components**: Modern Angular architecture
-- **Firebase Integration**: Authentication and Firestore database
-- **Reactive Forms**: Advanced form handling with validation
-- **Route Guards**: Protected routes for authenticated users
-- **Lazy Loading**: Optimized loading for better performance
-- **Responsive Design**: Mobile-first approach with Bootstrap integration
-- **TypeScript**: Strong typing throughout the application
-- **Custom Pipes**: Slug generation and other utility functions
-
-## Project Structure
-
-```
 src/
-├── components/          # Reusable UI components
+├── components/          # Componentes reutilizables de UI
 │   ├── header/
 │   ├── sidebar/
 │   ├── footer/
 │   └── message/
-├── pages/              # Route components
+├── pages/              # Componentes por ruta
 │   ├── home/
 │   ├── category/
 │   ├── thesis/
 │   ├── contact/
 │   ├── login/
 │   └── admin/
-├── services/           # Business logic and API services
+├── services/           # Lógica de negocio y servicios API
 │   ├── auth.service.ts
 │   └── data.service.ts
-├── guards/             # Route protection
+├── guards/             # Protección de rutas
 │   └── auth.guard.ts
-├── models/             # TypeScript interfaces
+├── models/             # Interfaces TypeScript
 │   └── interfaces.ts
-├── pipes/              # Custom pipes
+├── pipes/              # Pipes personalizados
 │   └── slug.pipe.ts
-└── environments/       # Configuration files
-```
+└── environments/       # Archivos de configuración
 
-## Firebase Configuration
+Configuración de Firebase
 
-Before running the application, you need to:
+Antes de ejecutar la aplicación, necesitas:
 
-1. Create a Firebase project at [Firebase Console](https://console.firebase.google.com/)
-2. Enable Authentication (Email/Password)
-3. Create a Firestore database
-4. Update the configuration in `src/environments/environment.ts` and `src/environments/environment.prod.ts`
+1. Crear un proyecto en Firebase: https://console.firebase.google.com/
+2. Habilitar la autenticación por correo/contraseña
+3. Crear una base de datos Firestore
+4. Actualizar la configuración en src/environments/environment.ts y src/environments/environment.prod.ts
 
-```typescript
+Ejemplo:
+
 export const environment = {
   production: false,
   firebase: {
@@ -78,73 +73,70 @@ export const environment = {
     appId: "your-app-id"
   }
 };
-```
 
-## Database Schema
+Esquema de la base de datos
 
-The application uses the following Firestore collections:
+La aplicación usa las siguientes colecciones en Firestore:
 
-- **categories**: Main topic categories (Mary and Saints, Morality, etc.)
-- **theses**: Specific theological statements within categories
-- **citations**: Patristic quotes supporting each thesis
-- **objections**: Common objections to theses with responses
-- **notes**: Interactive annotations for citations
-- **users**: User profiles and roles
+- categories: Categorías temáticas principales (María y los santos, Moral, etc.)
+- theses: Afirmaciones teológicas específicas dentro de cada categoría
+- citations: Citas patrísticas que respaldan cada tesis
+- objections: Objeciones comunes a las tesis con respuestas
+- notes: Anotaciones interactivas para las citas
+- users: Perfiles de usuario y roles
 
-## Getting Started
+Primeros pasos
 
-1. Install dependencies:
-```bash
-npm install
-```
+1. Instalar dependencias:
+   npm install
 
-2. Configure Firebase (see Firebase Configuration above)
+2. Configurar Firebase (ver sección anterior)
 
-3. Start the development server:
-```bash
-npm run start
-```
+3. Iniciar el servidor de desarrollo:
+   npm run start
 
-4. Navigate to `http://localhost:4200`
+4. Navegar a:
+   http://localhost:4200
 
-5. Create an admin account by registering (first user becomes admin)
+5. Crear una cuenta de administrador (el primer usuario registrado será administrador)
 
-## Usage
+Uso
 
-### For Administrators
-1. Access the admin panel at `/login`
-2. Create categories, theses, citations, and objections
-3. Content automatically appears on the public site
-4. Use the CRUD interface to manage all content
+Para administradores:
+1. Accede al panel administrativo en /login
+2. Crea categorías, tesis, citas y objeciones
+3. El contenido aparece automáticamente en el sitio público
+4. Usa la interfaz CRUD para gestionar todo el contenido
 
-### For Visitors
-1. Browse categories from the sidebar
-2. Click on categories to view theses
-3. Click on theses to read citations and objections
-4. Interactive notes provide additional context
+Para visitantes:
+1. Navega por las categorías desde la barra lateral
+2. Haz clic en una categoría para ver sus tesis
+3. Haz clic en una tesis para ver las citas y objeciones
+4. Las notas interactivas proporcionan contexto adicional
 
-## Design Philosophy
+Filosofía de diseño
 
-The application follows an academic, formal design inspired by traditional scholarly publications:
+La aplicación sigue un diseño formal y académico inspirado en publicaciones eruditas tradicionales:
 
-- **Typography**: Times New Roman serif fonts throughout
-- **Color Scheme**: White backgrounds with dark text and gold/brown accents (#8b6914)
-- **Layout**: Classical column-based layouts with proper spacing
-- **Navigation**: Hierarchical sidebar navigation with expandable sections
-- **Interactions**: Subtle animations that enhance rather than distract
+- Tipografía: Fuentes serif como Times New Roman en todo el sitio
+- Paleta de colores: Fondo blanco con texto oscuro y acentos dorados/marrones (#8b6914)
+- Diseño: Maquetación clásica basada en columnas con espaciado adecuado
+- Navegación: Menú lateral jerárquico con secciones expandibles
+- Interacciones: Animaciones sutiles que complementan sin distraer
 
-## Technologies Used
+Tecnologías utilizadas
 
-- **Angular 20+**: Modern web framework with standalone components
-- **Firebase**: Backend-as-a-Service for authentication and database
-- **Bootstrap**: CSS framework for responsive design
-- **TypeScript**: Type-safe development
-- **RxJS**: Reactive programming for data management
-- **FontAwesome**: Icon library
+- Angular 20+: Framework moderno con componentes independientes
+- Firebase: Backend como servicio para autenticación y base de datos
+- Bootstrap: Framework CSS para diseño responsivo
+- TypeScript: Desarrollo con tipado fuerte
+- RxJS: Programación reactiva para manejo de datos
+- FontAwesome: Biblioteca de íconos
 
-## Contributing
+Contribuciones
 
-This application serves as a complete example of modern Angular development with Firebase integration. Feel free to use it as a reference for similar academic or content management projects.
+Esta aplicación sirve como ejemplo completo de desarrollo moderno en Angular con integración de Firebase. Puedes usarla como referencia para proyectos académicos o de gestión de contenidos similares.
+
 
 ## License
 
