@@ -27,26 +27,28 @@ Características técnicas
 
 Estructura del proyecto
 
+```
 src/
-├── components/          # Componentes reutilizables de UI
+├── components/          # Reusable UI components
 │   ├── header/
 │   ├── sidebar/
 │   ├── footer/
 │   └── message/
-├── pages/              # Componentes por ruta
+├── pages/              # Route components
 │   ├── home/
 │   ├── category/
 │   ├── thesis/
 │   ├── contact/
 │   ├── login/
 │   └── admin/
-├── services/           # Lógica de negocio y servicios API
+├── services/           # Business logic and API services
 │   ├── auth.service.ts
 │   └── data.service.ts
-├── guards/             # Protección de rutas
+├── guards/             # Route protection
 │   └── auth.guard.ts
-├── models/             # Interfaces TypeScript
+├── models/             # TypeScript interfaces
 │   └── interfaces.ts
-├── pipes/              # Pipes personalizados
+├── pipes/              # Custom pipes
 │   └── slug.pipe.ts
-└── environments/       # Archivos de configuración
+└── environments/       # Configuration files
+```
