@@ -1,8 +1,8 @@
 Características
 
 Características públicas
-- Página de inicio: Introducción a los Padres de la Iglesia con secciones "Qué, Por qué, Quién"
-- Navegación por categorías: Exploración jerárquica (Categorías → Tesis → Citas)
+- Página de inicio
+- Navegación por categorías: Exploración jerárquica (Categorías → Tesis → Contenido)
 - Diseño responsivo: Estilo académico con tipografía con serifas y una paleta de colores elegante
 - Citas interactivas: Notas expandibles con animaciones suaves
 - Búsqueda y filtro: Capacidad de filtrado en tiempo real
